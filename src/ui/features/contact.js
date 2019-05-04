@@ -1,7 +1,6 @@
 import React from 'react'
 import { Form, TextArea, TextBox } from 'react-form-elements'
 const ContactForm = () => {
-
   return (
     <main>
       <section>
@@ -14,11 +13,7 @@ const ContactForm = () => {
               console.log('Message', values.message)
             }}
           >
-            <TextBox
-              name="userName"
-              label="Your Name"
-              initialValue=""
-            />
+            <TextBox name="userName" label="Your Name" initialValue="" />
             <TextBox
               type="email"
               name="userEmail"
