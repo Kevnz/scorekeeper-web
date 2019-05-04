@@ -18,6 +18,7 @@ const devConfig = {
     }),
   ],
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist',
     hot: true,
     proxy: {
