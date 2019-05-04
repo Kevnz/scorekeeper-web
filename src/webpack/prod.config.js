@@ -19,7 +19,7 @@ const prodConfig = {
   ],
   output: {
     path: path.join(process.cwd(), '/dist'),
-    publicPath: '/',
+    publicPath: 'https://kevinisom.info/scorekeeper-web/',
     filename: 'bundle.js',
   },
 }
