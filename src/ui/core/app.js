@@ -14,6 +14,7 @@ export default class App extends Component {
         <React.Suspense fallback={<div>Loading</div>}>
           <Router>
             <Home path="/" />
+            <Home path="/scorekeeper-web" />
             <About path="/about" />
             <Contact path="/contact" />
           </Router>
