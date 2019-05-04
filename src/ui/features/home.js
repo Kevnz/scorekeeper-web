@@ -23,7 +23,6 @@ export default () => {
 
   return (
     <main>
-      <h1>ScoreKeeper</h1>
       <div className="container">
         <div className="row">
           <div
@@ -98,6 +97,8 @@ export default () => {
                 disabled={secondQuarter.complete}
                 onClick={() => {
                   if (secondQuarter.complete) return
+                  if (!firstQuarter.complete) return
+
                   setSecondQuarter({
                     total: {
                       home: homeScore,
@@ -123,6 +124,9 @@ export default () => {
                 disabled={thirdQuarter.complete}
                 onClick={() => {
                   if (thirdQuarter.complete) return
+                  if (!firstQuarter.complete) return
+                  if (!secondQuarter.complete) return
+
                   setThirdQuarter({
                     total: {
                       home: homeScore,
@@ -148,6 +152,10 @@ export default () => {
                 disabled={fourthQuarter.complete}
                 onClick={() => {
                   if (fourthQuarter.complete) return
+                  if (!firstQuarter.complete) return
+                  if (!secondQuarter.complete) return
+                  if (!thirdQuarter.complete) return
+
                   setFourthQuarter({
                     total: {
                       home: homeScore,
