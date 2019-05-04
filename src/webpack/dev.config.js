@@ -4,6 +4,13 @@ const baseConfig = require('./config')
 
 const devConfig = {
   plugins: [
+    new webpack.DefinePlugin({
+      process: {
+        env: {
+          NODE_ENV: '"development"',
+        },
+      },
+    }),
     new HtmlWebpackPlugin({
       title: 'Custom template',
       template: './src/ui/index.html',
