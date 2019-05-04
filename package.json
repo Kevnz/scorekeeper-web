@@ -7,6 +7,7 @@
     "lint": "eslint ./src",
     "watch": "npm-run-all --parallel dev:**",
     "build": "webpack --config ./src/webpack/prod.config.js --mode production",
+    "pages": "node ./src/scripts/publish.js",
     "dev:ui": "webpack-dev-server --config ./src/webpack/dev.config.js --mode development",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
