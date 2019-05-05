@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 import { Button } from 'react-form-elements'
+import reducer from '../reducers'
+
 export default () => {
   const [home, setHome] = useState('Home')
   const [away, setAway] = useState('Away')
@@ -20,7 +22,18 @@ export default () => {
   const [secondQuarter, setSecondQuarter] = useState(defaultQuarter)
   const [thirdQuarter, setThirdQuarter] = useState(defaultQuarter)
   const [fourthQuarter, setFourthQuarter] = useState(defaultQuarter)
-
+  const [state, dispatch] = useReducer(reducer, {
+    home: 0,
+    away: 0,
+    currentQuarter: null,
+    quarters: {
+      first: {},
+      second: {},
+      third: {},
+      fourth: {},
+    },
+  })
+  console.log(state)
   return (
     <main>
       <div className="container">
@@ -35,6 +48,7 @@ export default () => {
               <Button
                 onClick={() => {
                   setHomeScore(homeScore + 1)
+                  dispatch({ type: 'score.home' })
                 }}
               >
                 {home}
@@ -51,6 +65,7 @@ export default () => {
               <Button
                 onClick={() => {
                   setAwayScore(awayScore + 1)
+                  dispatch({ type: 'score.away' })
                 }}
               >
                 {away}
