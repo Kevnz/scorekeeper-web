@@ -1,10 +1,18 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 const baseConfig = require('./config')
 const prodConfig = {
   plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new webpack.DefinePlugin({
       process: {
         env: {
@@ -13,13 +21,12 @@ const prodConfig = {
       },
     }),
     new HtmlWebpackPlugin({
-      title: 'Custom template',
+      title: 'UI Web App',
       template: './src/ui/index.html',
-      historyApiFallback: true,
     }),
     new CopyPlugin([
       {
-        from: path.join(process.cwd(), '/src', '/public'),
+        from: path.join(process.cwd(), '/src/public'),
         to: path.join(process.cwd(), '/dist'),
       },
     ]),

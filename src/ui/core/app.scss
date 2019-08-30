@@ -1,0 +1,94 @@
+
+
+
+@charset "utf-8";
+@import "../../../node_modules/bulma/sass/utilities/initial-variables";
+/* Color Theme Swatches in Hex */
+
+
+/* Color Theme Swatches in RGBA */
+$Color-Theme-7-1-rgba: rgba(0,31,92, 1);
+$Color-Theme-7-2-rgba: rgba(0,50,145, 1);
+$Color-Theme-7-3-rgba: rgba(251,192,0, 1);
+$Color-Theme-7-4-rgba: rgba(255,123,0, 1);
+$Color-Theme-7-5-rgba: rgba(237,0,0, 1);
+
+/* Color Theme Swatches in HSLA */
+$Color-Theme-7-1-hsla: hsla(219, 100, 18, 1);
+$Color-Theme-7-2-hsla: hsla(219, 100, 28, 1);
+$Color-Theme-7-3-hsla: hsla(46, 100, 49, 1);
+$Color-Theme-7-4-hsla: hsla(29, 100, 50, 1);
+$Color-Theme-7-5-hsla: hsla(0, 100, 46, 1);
+
+/* Color Theme Swatches in Hex */
+$Simon-1-hex: #FF5C3C;
+$Simon-2-hex: #FFCB85;
+$Simon-3-hex: #455E6B;
+$Simon-4-hex: #7CC3B0;
+$Simon-5-hex: #1AAA94;
+$Simon-6-hex: rgb(255, 60, 60);
+
+$Color-Theme-Dark: #00205D;
+$Color-Theme-Blue: #455E6B;
+$Color-Theme-Yellow: #FFCB85;
+$Color-Theme-Orange: #FF5C3C;
+$Color-Theme-Red: rgb(255, 60, 60);
+$Color-Theme-Green: #1AAA94;
+/* Color Theme Swatches in RGBA */
+$Simon-1-rgba: rgba(255,92,60, 1);
+$Simon-2-rgba: rgba(255,203,133, 1);
+$Simon-3-rgba: rgba(69,94,107, 1);
+$Simon-4-rgba: rgba(124,195,176, 1);
+$Simon-5-rgba: rgba(26,170,148, 1);
+
+/* Color Theme Swatches in HSLA */
+$Simon-1-hsla: hsla(9, 100, 61, 1);
+$Simon-2-hsla: hsla(34, 100, 76, 1);
+$Simon-3-hsla: hsla(200, 21, 34, 1);
+$Simon-4-hsla: hsla(163, 37, 62, 1);
+$Simon-5-hsla: hsla(170, 73, 38, 1);
+
+
+
+
+$blue: $Color-Theme-Blue;
+
+$primary: $Color-Theme-Orange;
+$warning: $Color-Theme-Yellow;
+$success: $Color-Theme-Green;
+$danger: $Color-Theme-Red;
+$info: $Color-Theme-Blue;
+$dark: $Color-Theme-Dark;
+// $primary-invert: $pink-invert;
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+
+@import "../../../node_modules/bulma/bulma";
+
+.flame-log {
+  width: 62px;
+  vertical-align: middle;
+}

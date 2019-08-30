@@ -1,5 +1,15 @@
 import React, { useState, useReducer } from 'react'
-import { Button } from 'react-form-elements'
+import {
+  Section,
+  Title,
+  SubTitle,
+  Container,
+  Box,
+  Button,
+  Columns,
+  Column,
+  Card,
+} from '@brightleaf/elements'
 import reducer from '../reducers'
 
 export default () => {
@@ -36,15 +46,15 @@ export default () => {
   console.log(state)
   return (
     <main>
-      <div className="container">
-        <div className="row">
-          <div
-            className="col-sm-6"
+      <Container>
+        <Columns className="row">
+          <Column
+            isOneHalf
             onClick={() => {
               // setHomeScore(homeScore + 1)
             }}
           >
-            <div className="card fluid">
+            <Box>
               <Button
                 onClick={() => {
                   setHomeScore(homeScore + 1)
@@ -53,15 +63,10 @@ export default () => {
               >
                 {home}
               </Button>
-            </div>
-          </div>
-          <div
-            className="col-sm-6"
-            onClick={() => {
-              // setAwayScore(awayScore + 1)
-            }}
-          >
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneHalf>
+            <Box className="card fluid">
               <Button
                 onClick={() => {
                   setAwayScore(awayScore + 1)
@@ -70,21 +75,21 @@ export default () => {
               >
                 {away}
               </Button>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-6">
-            <div className="card fluid">{homeScore}</div>
-          </div>
-          <div className="col-sm-6">
-            <div className="card fluid">{awayScore}</div>
-          </div>
-        </div>
+            </Box>
+          </Column>
+        </Columns>
+        <Columns className="row">
+          <Column isOneHalf>
+            <Box>{homeScore}</Box>
+          </Column>
+          <Column isOneHalf>
+            <Box>{awayScore}</Box>
+          </Column>
+        </Columns>
         <hr />
-        <div className="row">
-          <div className="col-sm-3">
-            <div className="card fluid">
+        <Columns className="row">
+          <Column isOneQuarter>
+            <Box>
               <Button
                 disabled={firstQuarter.complete}
                 onClick={() => {
@@ -104,10 +109,10 @@ export default () => {
               >
                 1st
               </Button>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <Button
                 disabled={secondQuarter.complete}
                 onClick={() => {
@@ -131,10 +136,10 @@ export default () => {
               >
                 2nd
               </Button>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <Button
                 disabled={thirdQuarter.complete}
                 onClick={() => {
@@ -159,10 +164,10 @@ export default () => {
               >
                 3rd
               </Button>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <Button
                 disabled={fourthQuarter.complete}
                 onClick={() => {
@@ -188,76 +193,76 @@ export default () => {
               >
                 4th
               </Button>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+        </Columns>
+        <Columns className="row">
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {firstQuarter.quarter.home} vs {away}:{' '}
                 {firstQuarter.quarter.away}
               </small>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {secondQuarter.quarter.home} vs {away}:{' '}
                 {secondQuarter.quarter.away}
               </small>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {thirdQuarter.quarter.home} vs {away}:{' '}
                 {thirdQuarter.away}
               </small>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {fourthQuarter.quarter.home} vs {away}:{' '}
                 {fourthQuarter.quarter.away}
               </small>
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Column>
+        </Columns>
         <hr />
-        <div className="row">
-          <div className="col-sm-3">
-            <div className="card fluid">
+        <Columns className="row">
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {firstQuarter.total.home} vs {away}:{' '}
                 {firstQuarter.total.away}
               </small>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box className="card fluid">
               <small>
                 {home}: {secondQuarter.home} vs {away}: {secondQuarter.away}
               </small>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {thirdQuarter.home} vs {away}: {thirdQuarter.away}
               </small>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="card fluid">
+            </Box>
+          </Column>
+          <Column isOneQuarter>
+            <Box>
               <small>
                 {home}: {fourthQuarter.home} vs {away}: {fourthQuarter.away}
               </small>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Box>
+          </Column>
+        </Columns>
+      </Container>
     </main>
   )
 }

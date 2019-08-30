@@ -1,6 +1,8 @@
-import React, { Component, Fragment } from 'react'
-
+import React, { Component } from 'react'
 import { Router } from '@reach/router'
+import { Section, Title, NavBar, NavBarBrand } from '@brightleaf/elements'
+
+import './app.scss'
 
 const About = React.lazy(() => import('../features/about'))
 const Home = React.lazy(() => import('../features/home'))
@@ -9,8 +11,16 @@ const Contact = React.lazy(() => import('../features/contact'))
 export default class App extends Component {
   render() {
     return (
-      <Fragment>
-        <h1>App</h1>
+      <Section>
+        <NavBar isLight isFixedTop>
+          <NavBarBrand
+            src="/favicon-32x32.png"
+            href="/"
+            target="navbarBasicExample"
+            width="32"
+            height="32"
+          />
+        </NavBar>
         <React.Suspense fallback={<div>Loading</div>}>
           <Router>
             <Home path="/" />
@@ -19,7 +29,7 @@ export default class App extends Component {
             <Contact path="/contact" />
           </Router>
         </React.Suspense>
-      </Fragment>
+      </Section>
     )
   }
 }
