@@ -47,7 +47,22 @@ export default () => {
   return (
     <main>
       <Container>
-        <Columns className="row">
+        {state.currentQuarter === null && (
+          <Columns isMobile className="row">
+            <Column isFull>
+              <Button
+                isDanger
+                isLarge
+                onClick={() => {
+                  dispatch({ type: 'game.start' })
+                }}
+              >
+                Begin Game
+              </Button>
+            </Column>
+          </Columns>
+        )}
+        <Columns isMobile className="row">
           <Column
             isOneHalf
             onClick={() => {
@@ -56,6 +71,7 @@ export default () => {
           >
             <Box>
               <Button
+                disabled={state.currentQuarter === null}
                 onClick={() => {
                   setHomeScore(homeScore + 1)
                   dispatch({ type: 'score.home' })
@@ -68,6 +84,7 @@ export default () => {
           <Column isOneHalf>
             <Box className="card fluid">
               <Button
+                disabled={state.currentQuarter === null}
                 onClick={() => {
                   setAwayScore(awayScore + 1)
                   dispatch({ type: 'score.away' })
@@ -78,7 +95,7 @@ export default () => {
             </Box>
           </Column>
         </Columns>
-        <Columns className="row">
+        <Columns isMobile className="row">
           <Column isOneHalf>
             <Box>{homeScore}</Box>
           </Column>
@@ -87,7 +104,7 @@ export default () => {
           </Column>
         </Columns>
         <hr />
-        <Columns className="row">
+        <Columns isMobile className="row">
           <Column isOneQuarter>
             <Box>
               <Button
@@ -196,7 +213,7 @@ export default () => {
             </Box>
           </Column>
         </Columns>
-        <Columns className="row">
+        <Columns isMobile className="row">
           <Column isOneQuarter>
             <Box>
               <small>
@@ -231,7 +248,7 @@ export default () => {
           </Column>
         </Columns>
         <hr />
-        <Columns className="row">
+        <Columns isMobile className="row">
           <Column isOneQuarter>
             <Box>
               <small>
